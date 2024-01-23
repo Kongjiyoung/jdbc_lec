@@ -12,7 +12,7 @@ import java.lang.annotation.Retention;
 public class BankController {
     private BankDao dao;
 
-
+    @RequestMapping(uri="/insert")
     public  void insert(){
         //1. 파싱
 
@@ -23,23 +23,25 @@ public class BankController {
         dao.insert("1234", 1000);
     }
 
-
+    @RequestMapping(uri="/delete")
     public void delete(){
         System.out.println("controller : delete");
         System.out.println(5);
     }
 
-
-    public  void update(){
+    @RequestMapping(uri="/update")
+    public  void update() {
         System.out.println("controller : update");
-        dao.updateByNumber(1000,4);
+        dao.updateByNumber(1000, 4);
     }
 
+    @RequestMapping(uri="/selectOne")
     public void selectOne(){
         System.out.println("controller : selectOne");
         dao.selectByNumber(4);
     }
 
+    @RequestMapping(uri="/selectAll")
     public void selectAll(){
         System.out.println("controller : selectAll");
         dao.selectAll();

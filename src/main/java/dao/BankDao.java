@@ -122,6 +122,7 @@ public class BankDao {
                 );
                 accountList.add(account);
             }
+            System.out.println(accountList);
             return accountList;
 
         }catch (Exception e){
